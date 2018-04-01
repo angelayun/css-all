@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    option:default {
+      color: red;
+    }
+
+    :default {
+      transform: sclae(1.5);
+    }
+  </style>
+</head>
+
+<body>
+  <select multiple>
+    <option>选项1</option>
+    <option>选项2</option>
+    <option>选项3</option>
+    <option selected>选项4</option>
+    <option>选项5</option>
+    <option>选项6</option>
+  </select>
+  <input type="radio" name="city" value="0">
+  <input type="radio" name="city" value="1" checked>
+  <input type="radio" name="city" value="2">
+  <script>
+    document.querySelectorAll('[type="radio"]')[2].checked = true;
+  </script>
+</body>
+
+</html>
