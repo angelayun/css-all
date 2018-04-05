@@ -1,0 +1,106 @@
+html, body {
+  height: 100%;
+}
+
+// remove the clear button of a text input control in IE10+
+input::-ms-clear, input::-ms-reveal {
+  display: none;
+}
+
+// Shim for "new" HTML5 structural elements to display correctly (IE10, older browsers)
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+img:not([src]) {
+  display: inline-block;
+}
+
+a {
+  color: #1890ff;
+  background-color: transparent; // remove the gray background on active links in IE 10.
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  transition: color .3s;
+  -webkit-text-decoration-skip: objects; // remove gaps in links underline in iOS 8+ and Safari 8+.
+  &:focus {
+    text-decoration: underline;
+    text-decoration-skip: ink;
+  }
+  &:hover {
+    color: #1171b7;
+  }
+  &:active {
+    color: @link-active-color;
+  }
+  &:active, &:hover {
+    outline: 0;
+    text-decoration: none;
+  }
+  &[disabled] {
+    color: fade(#000, 25%);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+input[type="text"], input[type="password"], input[type="number"], textarea {
+  -webkit-appearance: none;
+}
+
+::selection {
+  background: #1890ff;
+  color: #fff;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+textarea {
+  overflow: auto; // remove the default vertical scrollbar in IE.
+  // Textareas should really only resize vertically so they don't break their (horizontal) containers.
+  resize: vertical;
+}
+
+input, button, select, textarea {
+  margin: 0; // remove the margin in Firefox and Safari
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  -webkit-user-modify: read-write-plaintext-only;
+  -webkit-appearance: none;
+}
+
+button, input {
+  overflow: visible; // Show the overflow in Edge
+}
+
+button, select {
+  text-transform: none; // remove the inheritance of text transform in Firefox
+}
+
+// 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+//    controls in Android 4.
+// 2. Correct the inability to style clickable types in iOS and Safari.
+[type="button"], // 1
+[type="reset"], [type="submit"] {
+  -webkit-appearance: button; // 2
+}
+
+// remove inner border and padding from Firefox, but don't restore the outline like Normalize.
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  box-sizing: border-box; // 1. Add the correct box sizing in IE 10-
+  padding: 0; // 2. remove the padding in IE 10-
+}
